@@ -34,7 +34,7 @@ class AppKernel extends Kernel
 			new FOS\UserBundle\FOSUserBundle(),
 			new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
 			new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-			// new Ocd\Sonata\UserBundle\OcdSonataUserBundle(),
+			
 	        new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
 			
 			//SonataPageBundle
@@ -42,10 +42,10 @@ class AppKernel extends Kernel
 			new Sonata\SeoBundle\SonataSeoBundle(),
 			new Sonata\NotificationBundle\SonataNotificationBundle(),
 			new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
-			// new Ocd\Sonata\NotificationBundle\OcdSonataNotificationBundle(),
+			
 			new Sonata\PageBundle\SonataPageBundle(),
 			new Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
-			// new Ocd\Sonata\PageBundle\OcdSonataPageBundle(),
+			
 			
 			//SonataFormatterBundle
 			new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
@@ -76,7 +76,7 @@ class AppKernel extends Kernel
 			new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
 			
 			//Ocd
-			// new Ocd\CorporateBundle\OcdCorporateBundle(),
+			
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

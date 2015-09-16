@@ -8,5 +8,6 @@
 /app/phpunit.xml
 /bin/
 /composer.phar
-/vendor/
-/web/bundles/
+/vendor/*
+/web/bundles/*
+/web/uploads/media/*
