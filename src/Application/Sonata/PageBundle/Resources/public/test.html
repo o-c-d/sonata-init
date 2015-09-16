@@ -1,0 +1,236 @@
+<html>
+<head>
+
+<style>
+
+.polyhedron_transform {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  perspective-origin: calc(50% - $l) calc(50% - $l);
+  perspective: 32em;
+  background: linear-gradient(black, dimgrey);
+}
+
+.polyhedron, .polyhedron *, .polyhedron :before, .polyhedron :after {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+}
+.polyhedron {
+  animation: rot 17.38s linear infinite;
+}
+.polyhedron__face:nth-child(1) {
+  transform: rotateY(0deg) rotateX(19.46995deg) translateZ(4.08258em);
+}
+.polyhedron__face:nth-child(1) :before {
+  background: linear-gradient(-90deg, rgba(255, 0, 0, 0.3), rgba(0, 255, 0, 0.3));
+  background: linear-gradient(-90deg, rgba(255, 0, 0, 0.3), rgba(0, 255, 0, 0.3));
+}
+.polyhedron__face:nth-child(5) {
+  transform: rotateY(60deg) rotateX(-19.46995deg) translateZ(12.24735em);
+}
+.polyhedron__face:nth-child(5) .polygon {
+  color: yellow;
+}
+.polyhedron__face:nth-child(5) :before {
+  background: linear-gradient(90deg, rgba(255, 255, 0, 0.3), rgba(0, 255, 255, 0.3));
+}
+.polyhedron__face:nth-child(2) {
+  transform: rotateY(120deg) rotateX(19.46995deg) translateZ(4.08258em);
+}
+.polyhedron__face:nth-child(2) :before {
+  background: linear-gradient(-90deg, rgba(0, 255, 0, 0.3), rgba(0, 0, 255, 0.3));
+}
+.polyhedron__face:nth-child(6) {
+  transform: rotateY(180deg) rotateX(-19.46995deg) translateZ(12.24735em);
+}
+.polyhedron__face:nth-child(6) .polygon {
+  color: yellow;
+}
+.polyhedron__face:nth-child(6) :before {
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+}
+.polyhedron__face:nth-child(3) {
+  transform: rotateY(240deg) rotateX(19.46995deg) translateZ(4.08258em);
+}
+.polyhedron__face:nth-child(3) :before {
+  background: linear-gradient(-90deg, rgba(0, 0, 255, 0.3), rgba(255, 0, 0, 0.3));
+}
+.polyhedron__face:nth-child(7) {
+  transform: rotateY(300deg) rotateX(-19.46995deg) translateZ(12.24735em);
+}
+.polyhedron__face:nth-child(7) .polygon {
+  color: yellow;
+}
+.polyhedron__face:nth-child(7) :before {
+  background: linear-gradient(90deg, rgba(255, 0, 255, 0.3), rgba(255, 255, 0, 0.3));
+}
+.polyhedron__face:nth-child(4) {
+  transform: rotateY(180deg) rotateX(-90deg) translateZ(4.08258em);
+}
+.polyhedron__face:nth-child(4) :before {
+  background: linear-gradient(-90deg, rgba(255, 0, 0, 0.3), rgba(0, 255, 0, 0.3));
+}
+.polyhedron__face:nth-child(8) {
+  transform: rotateX(90deg) translateZ(12.24735em);
+}
+.polyhedron__face:nth-child(8) .polygon {
+  color: yellow;
+}
+.polyhedron__face:nth-child(8) :before {
+  background: linear-gradient(90deg, rgba(255, 255, 0, 0.3), rgba(0, 255, 255, 0.3));
+}
+
+@keyframes rot {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+.transformer {
+  animation: ani 8s linear infinite alternate;
+}
+.transformer--scaler-shifter {
+  animation-name: vertex;
+}
+.transformer--scaler-reverse {
+  animation-name: face;
+}
+
+@keyframes vertex {
+  0%, 12.5% {
+    transform: scale(0.01) translateZ(0);
+  }
+  37.5%, 62.5% {
+    transform: scale(0.33) translateZ(-5.44331em);
+  }
+  87.5%, 100% {
+    transform: scale(0.5) translateZ(-8.16497em);
+  }
+}
+@keyframes edge {
+  0%, 12.5% {
+    background-size: 100% 100%, 100% 100%;
+  }
+  37.5%, 62.5% {
+    background-size: 100% 33.3%, 33.3% 100%;
+  }
+  87.5%, 100% {
+    background-size: 100% 0, 0 100%;
+  }
+}
+@keyframes face {
+  0%, 12.5% {
+    transform: translateY(2.88675em) rotate(180deg) scale(2);
+  }
+  37.5%, 62.5% {
+    transform: translateY(2.88675em) rotate(180deg) scale(1);
+  }
+  87.5%, 100% {
+    transform: translateY(2.88675em) rotate(180deg) scale(0.5);
+  }
+}
+.polygon, .polygon:before {
+  overflow: hidden;
+  margin:  -10em;
+  width: 20em;
+  height: 20em;
+}
+.polygon--triangle {
+  transform: translateY(5.7735em) rotate(30deg) skewY(30deg) scaleX(0.86603);
+}
+.polygon--triangle__b, .polygon--triangle:before, .polygon--triangle:after {
+  margin: -8.66025em -10em;
+  width: 20em;
+  height: 17.32051em;
+  transform: scaleX(1.1547) skewY(-30deg) rotate(-30deg) translateY(-50%);
+}
+.polygon--triangle:empty {
+  border: solid .125em white;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+.polygon--triangle:empty:before {
+  border: solid .125em white;
+  content: '';
+}
+.polygon--triangle.outermorph, .polygon--triangle.outermorph:after {
+  background: linear-gradient(90deg, white 0.125em, transparent 0.125em), linear-gradient(white 0.125em, transparent 0.125em);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  animation: edge 8s linear infinite alternate;
+}
+.polygon--triangle.outermorph:after {
+  background-image: linear-gradient(90deg, white 0.125em, transparent 0.125em), linear-gradient(0deg, white 0.125em, transparent 0.25em);
+  content: '';
+}
+
+
+</style>
+
+</head>
+<body>
+<div class="polyhedron_transform">
+	<div class='polyhedron polyhedron--truncated polyhedron--tetrahedron'>
+	  <div class='polyhedron__face polyhedron--tetrahedron__face'>
+		<div class='polygon polygon--triangle outermorph'>
+		  <div class='polygon polygon--triangle__b'>
+			<div class='transformer transformer--scaler-reverse'>
+			  <div class='polygon polygon--triangle'></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class='polyhedron__face polyhedron--tetrahedron__face'>
+		<div class='polygon polygon--triangle outermorph'>
+		  <div class='polygon polygon--triangle__b'>
+			<div class='transformer transformer--scaler-reverse'>
+			  <div class='polygon polygon--triangle'></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class='polyhedron__face polyhedron--tetrahedron__face'>
+		<div class='polygon polygon--triangle outermorph'>
+		  <div class='polygon polygon--triangle__b'>
+			<div class='transformer transformer--scaler-reverse'>
+			  <div class='polygon polygon--triangle'></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class='polyhedron__face polyhedron--tetrahedron__face'>
+		<div class='polygon polygon--triangle outermorph'>
+		  <div class='polygon polygon--triangle__b'>
+			<div class='transformer transformer--scaler-reverse'>
+			  <div class='polygon polygon--triangle'></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class='polyhedron__face'>
+		<div class='transformer transformer--scaler-shifter'>
+		  <div class='polygon polygon--triangle'></div>
+		</div>
+	  </div>
+	  <div class='polyhedron__face'>
+		<div class='transformer transformer--scaler-shifter'>
+		  <div class='polygon polygon--triangle'></div>
+		</div>
+	  </div>
+	  <div class='polyhedron__face'>
+		<div class='transformer transformer--scaler-shifter'>
+		  <div class='polygon polygon--triangle'></div>
+		</div>
+	  </div>
+	  <div class='polyhedron__face'>
+		<div class='transformer transformer--scaler-shifter'>
+		  <div class='polygon polygon--triangle'></div>
+		</div>
+	  </div>
+	</div>
+</div>
+</body>
+</html>

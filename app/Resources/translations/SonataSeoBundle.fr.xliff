@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="">
+        <body>
+            <trans-unit id="sonata_seo_homepage_breadcrumb">
+                <source>sonata_seo_homepage_breadcrumb</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="sonata_seo_share_by_email">
+                <source>sonata_seo_share_by_email</source>
+                <target>Partager par e-mail</target>
+            </trans-unit>
+            <trans-unit id="Home">
+                <source>Home</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="Technologies web">
+                <source>Technologies web</source>
+                <target>Technologies web</target>
+            </trans-unit>
+            <trans-unit id="Strategie">
+                <source>Strategie</source>
+                <target>Strategie</target>
+            </trans-unit>
+            <trans-unit id="Référencement de votre activité">
+                <source>Référencement de votre activité</source>
+                <target>Référencement de votre activité</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,175 @@
+<html>
+<head>
+
+<style>
+html {
+  overflow: hidden;
+  height: 100%;
+  perspective: 16em;
+  background: black;
+}
+
+.sphere, .sphere *, .sphere *:before, .sphere *:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  background: inherit;
+}
+
+.sphere {
+  transform: rotate3d(10, 21, 35, 261deg);
+  animation: rot 17s cubic-bezier(0, -2, 1, 3) infinite;
+}
+.sphere *:before, .sphere *:after {
+  margin: -50% -50%;
+  box-shadow: inset 0 0 0 1px white;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  content: '';
+}
+
+.circle {
+  margin: -10em -10em;
+  box-shadow: inset 0 0 0 1px white;
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+}
+
+.m:nth-child(1) {
+  transform: rotateY(0deg);
+}
+.m:nth-child(2) {
+  transform: rotateY(60deg);
+}
+.m:nth-child(3) {
+  transform: rotateY(120deg);
+}
+.m:nth-child(4) {
+  transform: rotateY(180deg);
+}
+.m:nth-child(5) {
+  transform: rotateY(240deg);
+}
+.m:nth-child(6) {
+  transform: rotateY(300deg);
+}
+.m:before {
+  transform: rotateY(-20deg);
+}
+.m:after {
+  transform: rotateY(20deg);
+}
+
+.p {
+  transform: rotateX(90deg);
+}
+.p:nth-last-child(1) {
+  transform: translateY(0em) rotateX(90deg) scale(1);
+}
+.p:nth-last-child(1):before {
+  content: -0.17453;
+  transform: translateZ(1.73648em) scale(0.98481);
+}
+.p:nth-last-child(1):after {
+  transform: translateZ(-1.73648em) scale(0.98481);
+}
+.p:nth-last-child(2) {
+  transform: translateY(-5.0em) rotateX(90deg) scale(0.86603);
+}
+.p:nth-last-child(2):before {
+  content: -0.34907;
+  transform: translateZ(-8.4202em) scale(1.08506);
+}
+.p:nth-last-child(2):after {
+  transform: translateZ(1.42788em) scale(0.88455);
+}
+.p:nth-last-child(3) {
+  transform: translateY(5.0em) rotateX(90deg) scale(0.86603);
+}
+.p:nth-last-child(3):before {
+  content: 0.34907;
+  transform: translateZ(8.4202em) scale(1.08506);
+}
+.p:nth-last-child(3):after {
+  transform: translateZ(-1.42788em) scale(0.88455);
+}
+.p:nth-last-child(4) {
+  transform: translateY(-8.66025em) rotateX(90deg) scale(0.5);
+}
+.p:nth-last-child(4):before {
+  content: -0.87266;
+  transform: translateZ(-16.3207em) scale(1.28558);
+}
+.p:nth-last-child(4):after {
+  transform: translateZ(0.73667em) scale(0.68404);
+}
+.p:nth-last-child(5) {
+  transform: translateY(8.66025em) rotateX(90deg) scale(0.5);
+}
+.p:nth-last-child(5):before {
+  content: 0.87266;
+  transform: translateZ(16.3207em) scale(1.28558);
+}
+.p:nth-last-child(5):after {
+  transform: translateZ(-0.73667em) scale(0.68404);
+}
+
+.cube, .i {
+  margin: -1.66667em -1.66667em;
+  box-shadow: inset 0 0 0 1px white;
+  width: 3.33333em;
+  height: 3.33333em;
+}
+.cube:before, .i:before {
+  transform-origin: 50% 0;
+  transform: rotateX(-90deg) rotateY(180deg);
+}
+.cube:after, .i:after {
+  transform-origin: 0 50%;
+  transform: rotateY(90deg);
+}
+
+.cube {
+  transform: rotate3d(1, 24, 22, 21deg) translateZ(1.66667em);
+  background: rgba(183, 255, 0, 0.25);
+  animation: arot 2s cubic-bezier(0, 5, 1, -4) infinite;
+}
+
+.i {
+  transform: rotateY(180deg) translateZ(3.33333em) scaleY(-1);
+}
+
+@keyframes rot {
+  to {
+    transform: rotate3d(16, 17, 23, 498deg);
+  }
+}
+@keyframes arot {
+  to {
+    transform: rotate3d(8, 10, 7, 494deg) translateZ(1.66667em);
+    background: rgba(255, 145, 0, 0.25);
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+<div class='sphere'>
+  <div class='m circle'></div>
+  <div class='m circle'></div>
+  <div class='m circle'></div>
+  <div class='cube'>
+    <div class='i'></div>
+  </div>
+  <div class='p circle'></div>
+  <div class='p circle'></div>
+  <div class='p circle'></div>
+  <div class='p circle'></div>
+  <div class='p circle'></div>
+</div></body>
+</html>

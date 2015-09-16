@@ -1,0 +1,222 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: assetic.yml }
+    - { resource: sonata/sonata_admin.yml }
+    - { resource: sonata/sonata_block.yml }
+    - { resource: sonata/sonata_classification.yml }
+    - { resource: sonata/sonata_formatter.yml }
+    - { resource: sonata/sonata_media.yml }
+    - { resource: sonata/sonata_news.yml }
+    - { resource: sonata/sonata_notification.yml }
+    - { resource: sonata/sonata_page.yml }
+    - { resource: sonata/sonata_user.yml }
+    - { resource: sonata/sonata_seo.yml }
+    - { resource: sonata/sonata_timeline.yml }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: fr
+    domain_host: o-c-d.fr
+    google_analytics_ua: UA-116502-9
+    google_client_id: 97250673256-3qa04fp22ahob52ttceoj8q3uahtsasc.apps.googleusercontent.com
+    google_client_secret: 1WWhRc3o_BSuO1Sz4L35rT40
+    facebook_client_id: 1487410514912527
+    facebook_client_secret: 43a7eb9a5322430600004bab55ee1604
+    github_client_id: -
+    github_client_secret: -
+    twitter_client_id: P8zsboCggnxPZ6DdWYaSsit5p
+    twitter_client_secret: V9Hk3OGXBFJWjR8aUUFERNnZXy09fX65D665timvZHZA7dfyZB
+    twitter_client_id: LAaL6Ugmu2NbTYUtDhqc7XIUS
+    twitter_client_secret: xkZ57XzDNweYZfE3m4JVStUk1aHF4CSDumbTxYqv5Vb2Ck6cIc
+
+framework:
+    #esi:             ~
+    translator:      { fallbacks: ["%locale%"] }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+        #assets_version: SomeVersionScheme
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # handler_id set to null will use default session handler from php.ini
+        handler_id:  ~
+    fragments:       ~
+    http_method_override: true
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    globals:
+        google_analytics_ua: "%google_analytics_ua%"
+        google_client_id: "%google_client_id%"
+        google_client_secret: "%google_client_secret%"
+        facebook_client_id: "%facebook_client_id%"
+        facebook_client_secret: "%facebook_client_secret%"
+        github_client_id: "%github_client_id%"
+        github_client_secret: "%github_client_secret%"
+        twitter_client_id: "%twitter_client_id%"
+        twitter_client_secret: "%twitter_client_secret%"
+
+
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #     path:     "%database_path%"
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        entity_managers:
+            default:
+                mappings:
+                    # SonataUserBundle
+                    SonataUserBundle: ~
+                    FOSUserBundle: ~                                    # If SonataUserBundle extends it
+                    ApplicationSonataUserBundle: ~
+                    
+                    # SonataNotificationBundle
+                    SonataNotificationBundle: ~
+                    ApplicationSonataNotificationBundle: ~
+                    
+                    # SonataPageBundle
+                    SonataPageBundle: ~
+                    ApplicationSonataPageBundle: ~
+                    
+                    # SonataClassificationBundle
+                    #SonataClassificationBundle: ~
+                    #ApplicationSonataClassificationBundle: ~
+                    
+                    # SonataMediaBundle
+                    #SonataMediaBundle: ~
+                    #ApplicationSonataMediaBundle: ~
+                    
+                    # SonataNewsBundle
+                    #ApplicationSonataNewsBundle: ~
+                    #SonataNewsBundle: ~
+
+                    # SonataTimelineBundle
+                    #ApplicationSonataTimelineBundle: ~
+                    #SonataTimelineBundle: ~
+
+                    # AutreBundle
+                    #...
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+# end swiftmailer
+
+
+
+# custom config
+sonata_core: ~
+
+
+hwi_oauth:
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_name: main
+    http_client:
+        verify_peer: false # Setting allowing you to turn off SSL verification, by default: true
+    connect: ~
+#        confirmation: true
+#        account_connector: hwi_oauth.user.provider.fosub_bridge
+#        registration_form_handler: hwi_oauth.registration.form.handler.fosub_bridge
+#        registration_form: fos_user.registration.form
+    resource_owners:
+        github:
+            type:                github
+            client_id:           "%github_client_id%"
+            client_secret:       "%github_client_secret%"
+            scope:               "user:email"
+            options:
+                csrf:            true
+
+        google:
+            type:                google
+            client_id:           "%google_client_id%"
+            client_secret:       "%google_client_secret%"
+            scope:               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+#            user_response_class: \Our\Custom\Response\Class
+            paths:
+                email:           email
+                profilepicture:  picture
+            options:
+                access_type:     offline
+
+        facebook:
+            type:                facebook
+            client_id:           "%facebook_client_id%"
+            client_secret:       "%facebook_client_secret%"
+            scope:               ""
+
+        twitter:
+            type:                twitter
+            client_id:           "%twitter_client_id%"
+            client_secret:       "%twitter_client_secret%"
+
+    # optional FOSUserBundle integration
+    fosub:
+        # try 30 times to check if a username is available (foo, foo1, foo2 etc)
+        username_iterations: 30
+
+        # mapping between resource owners (see below) and properties
+        properties:
+            google: gplusUid
+            facebook: facebookUid
+            twitter: twitterUid
+
+
+
+
+
+
+
+cmf_create:
+    object_mapper_service_id: cmf_create.persistence.orm.object_mapper
+
+services:
+    cmf_create.persistence.orm.object_mapper:
+        class: Midgard\CreatePHP\Mapper\DoctrineOrmMapper
+        arguments:
+            - "%cmf_create.map%"
+            - "@doctrine"
+
+fos_rest:
+    view:
+        formats:
+            json: true
+
+
+
+

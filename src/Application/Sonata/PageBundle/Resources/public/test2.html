@@ -1,0 +1,98 @@
+<html>
+<head>
+
+<style>
+html, body {
+}
+
+.showcase {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  perspective-origin: 35% 25%;
+  perspective: 40em;
+  /*background: linear-gradient(dimgrey, grey);*/
+}
+
+.polyhedron {
+  transform-style: preserve-3d;
+  animation: rot 8s linear infinite;/**/
+}
+.polyhedron, .polyhedron__face, .polyhedron:before, .polyhedron :before {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.polyhedron--tetrahedron__face {
+  overflow: hidden;
+  margin:  -8em;
+  width: 16em;
+  height: 16em;
+  backface-visibility: hidden;
+}
+.polyhedron--tetrahedron__face:nth-child(1) {
+  transform: rotateY(120deg) rotateX(19.47122deg) translateZ(4.84974em) rotate(30deg) skewY(30deg) scaleX(0.86603);
+}
+.polyhedron--tetrahedron__face:nth-child(1):before {
+  animation-delay: -2.66667s;
+}
+.polyhedron--tetrahedron__face:nth-child(2) {
+  transform: rotateY(240deg) rotateX(19.47122deg) translateZ(4.84974em) rotate(30deg) skewY(30deg) scaleX(0.86603);
+}
+.polyhedron--tetrahedron__face:nth-child(2):before {
+  animation-delay: -5.33333s;
+}
+.polyhedron--tetrahedron__face:nth-child(3) {
+  transform: rotateY(360deg) rotateX(19.47122deg) translateZ(4.84974em) rotate(30deg) skewY(30deg) scaleX(0.86603);
+}
+.polyhedron--tetrahedron__face:nth-child(3):before {
+  animation-delay: -8s;
+}
+.polyhedron--tetrahedron__face:before {
+  margin: -8em -32em;
+  width: 64em;
+  height: 16em;
+  transform: scaleX(1.1547) skewY(-30deg) rotate(-30deg) translate(24em, -50%);
+  background: linear-gradient(90deg, rgba(244,215,123,0.5), rgba(144,99,32,0.5), rgba(117,58,41,0.5), rgba(99,24,37,0.5), rgba(72,38,57,0.5), rgba(99,24,37,0.5), rgba(117,58,41,0.5), rgba(144,99,32,0.5), rgba(244,215,123,0.5)) 50% 50%;
+  background: linear-gradient(rgba(30,87,153,1) 0%, rgba(41,137,216,1) 33%, rgba(41,137,216,1) 46%, rgba(32,124,202,1) 65%, rgba(125,185,232,1) 100%) 50% 50%;
+  background: linear-gradient(90deg, #f4d77b, #906320, #753a29, #631825, #482639, #631825, #753a29, #906320, #f4d77b) 50% 50%;
+  background: linear-gradient(90deg, #7E82F7, #1F2689, #2A2972, #182A60, #8089F2, #182A60, #2A2972, #1F2689, #7E82F7) 50% 50%;
+  background-size: 48em 16em;
+  animation: shade 8s linear infinite;/**/
+  content: '';
+}
+.polyhedron:before {
+  margin: -8em;
+  border: solid 8em transparent;
+  border-bottom: solid 13.85641em dimgrey;
+  transform: rotateX(90deg) translateY(-6.23538em);
+  opacity: .65;
+  content: '';
+}
+
+@keyframes rot {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes shade {
+  to {
+    transform: scaleX(1.1547) skewY(-30deg) rotate(-30deg) translate(-24em, -50%);
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+<div class="showcase">
+	<div class='polyhedron polyhedron--tetrahedron'>
+	  <div class='polyhedron__face polyhedron--tetrahedron__face'></div>
+	  <div class='polyhedron__face polyhedron--tetrahedron__face'></div>
+	  <div class='polyhedron__face polyhedron--tetrahedron__face'></div>
+	</div>
+</div>
+</body>
+</html>

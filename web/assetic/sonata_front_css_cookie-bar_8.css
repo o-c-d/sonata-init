@@ -1,0 +1,13 @@
+div#cookie-bar-info {
+    width:100%;
+    background: rgba(51, 221, 227, 0.75);
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    display: none;
+}
+
+div#cookie-bar-info > p {
+    text-align:center;
+    padding: 10px;
+}

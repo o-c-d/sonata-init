@@ -1,0 +1,15 @@
+{# ApplicationSonataPageBundle/Resources/views/CookieBar/info.html.twig #}
+
+{% block ocd_cookie_message %}
+    <div id="cookie-bar-info">
+        <p>
+            {{ 'sonata_application_cookies_message'|trans({}, 'ApplicationSonataPageBundle') }}
+            <a href="javascript:void(0);" id="cookie-bar-info-accept">
+                {{ 'sonata_application_cookies_message_accept'|trans({}, 'ApplicationSonataPageBundle') }}
+            </a>
+            <a href="javascript:void(0);" id="cookie-bar-info-close">
+                <i class="fa fa-times"></i>
+            </a>
+        </p>
+    </div>
+{% endblock %}

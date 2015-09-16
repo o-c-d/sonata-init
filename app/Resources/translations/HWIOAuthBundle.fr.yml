@@ -1,0 +1,20 @@
+header:
+    connecting: Connexion en cours
+    success: Connexion réussie avec le compte '%name%' !
+    register: S'inscrire avec le compte '%name%'
+    registration_success: Enregistrement et connexion du compte '%username%' réussis !
+
+connect:
+    confirm:
+        cancel: Annuler
+        submit: Connecter le compte
+        text: Êtes-vous sûr de vouloir connecter votre compte %service% avec votre compte '%name%' ?
+    registration:
+        cancel: Annuler
+        submit: Enregistrer le compte
+github: GitHub
+google: Google
+facebook: Facebook
+twitter: Twitter
+connect_with: Se connecter avec
+title_social_registration: Connexion

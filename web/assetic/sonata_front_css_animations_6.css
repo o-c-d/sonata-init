@@ -1,0 +1,189 @@
+
+@keyframes rotate { from { transform: rotateY(360deg) rotateX(360deg); } to { transform: rotateY(0deg) rotateX(0deg); } }
+
+@-webkit-keyframes spin { from { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); } to { -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); } }
+@-moz-keyframes spin    { from { -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }    to { -moz-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); } }
+@-ms-keyframes spin     { from { -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }     to { -ms-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); } }
+@keyframes spin         { from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }         to { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); } }
+
+@-webkit-keyframes spin-full { from { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); } to { -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); } }
+@-moz-keyframes spin-full    { from { -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }    to { -moz-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); } }
+@-ms-keyframes spin-full     { from { -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }     to { -ms-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); } }
+@keyframes spin-full         { from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }         to { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); } }
+
+@-webkit-keyframes spin-double { from { -webkit-transform: rotateX(0deg) rotateY(0deg) ; } to { -webkit-transform: rotateX(360deg) rotateY(360deg) ; } }
+@-moz-keyframes spin-double    { from { -moz-transform: rotateX(0deg) rotateY(0deg) ; }    to { -moz-transform: rotateX(360deg) rotateY(360deg) ; } }
+@-ms-keyframes spin-double     { from { -ms-transform: rotateX(0deg) rotateY(0deg) ; }     to { -ms-transform: rotateX(360deg) rotateY(360deg) ; } }
+@keyframes spin-double         { from { transform: rotateX(0deg) rotateY(0deg) ; }         to { transform: rotateX(360deg) rotateY(360deg) ; } }
+
+@-webkit-keyframes spin-left { from { -webkit-transform: rotateY(0deg) ; } to { -webkit-transform: rotateY(-360deg) ; } }
+@-moz-keyframes spin-left    { from { -moz-transform: rotateY(0deg) ; }    to { -moz-transform: rotateY(-360deg) ; } }
+@-ms-keyframes spin-left     { from { -ms-transform: rotateY(0deg) ; }     to { -ms-transform: rotateY(-360deg) ; } }
+@keyframes spin-left         { from { transform: rotateY(0deg) ; }         to { transform: rotateY(-360deg) ; } }
+
+@-webkit-keyframes spin-right { from { -webkit-transform: rotateY(0deg) ; } to { -webkit-transform: rotateY(360deg) ; } }
+@-moz-keyframes spin-right    { from { -moz-transform: rotateY(0deg) ; }    to { -moz-transform: rotateY(360deg) ; } }
+@-ms-keyframes spin-right     { from { -ms-transform: rotateY(0deg) ; }     to { -ms-transform: rotateY(360deg) ; } }
+@keyframes spin-right         { from { transform: rotateY(0deg) ; }         to { transform: rotateY(360deg) ; } }
+
+@-webkit-keyframes spin-top { from { -webkit-transform: rotateX(0deg) ; } to { -webkit-transform: rotateX(360deg) ; } }
+@-moz-keyframes spin-top    { from { -moz-transform: rotateX(0deg) ; }    to { -moz-transform: rotateX(360deg) ; } }
+@-ms-keyframes spin-top     { from { -ms-transform: rotateX(0deg) ; }     to { -ms-transform: rotateX(360deg) ; } }
+@keyframes spin-top         { from { transform: rotateX(0deg) ; }         to { transform: rotateX(360deg) ; } }
+
+@-webkit-keyframes spin-bottom { from { -webkit-transform: rotateX(0deg) ; } to { -webkit-transform: rotateX(-360deg) ; } }
+@-moz-keyframes spin-bottom    { from { -moz-transform: rotateX(0deg) ; }    to { -moz-transform: rotateX(-360deg) ; } }
+@-ms-keyframes spin-bottom     { from { -ms-transform: rotateX(0deg) ; }     to { -ms-transform: rotateX(-360deg) ; } }
+@keyframes spin-bottom         { from { transform: rotateX(0deg) ; }         to { transform: rotateX(-360deg) ; } }
+
+@-webkit-keyframes spin-side { from { -webkit-transform: rotateZ(0deg) ; } to { -webkit-transform: rotateZ(360deg) ; } }
+@-moz-keyframes spin-side    { from { -moz-transform: rotateZ(0deg) ; }    to { -moz-transform: rotateZ(360deg) ; } }
+@-ms-keyframes spin-side     { from { -ms-transform: rotateZ(0deg) ; }     to { -ms-transform: rotateZ(360deg) ; } }
+@keyframes spin-side         { from { transform: rotateZ(0deg) ; }         to { transform: rotateZ(360deg) ; } }
+
+
+
+
+
+
+
+/* glow */
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #eee,
+               0 0 30px  #ddd,
+               0 0 40px  #ccc,
+               0 0 70px  #bbb,
+               0 0 80px  #aaa,
+               0 0 100px #999,
+               0 0 150px #000;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #eee,
+               0 0 15px #ddd,
+               0 0 20px #ccc,
+               0 0 35px #bbb,
+               0 0 40px #aaa,
+               0 0 50px #999,
+               0 0 75px #000;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #228DFF,
+               0 0 70px  #228DFF,
+               0 0 80px  #228DFF,
+               0 0 100px #228DFF,
+               0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #228DFF,
+               0 0 35px #228DFF,
+               0 0 40px #228DFF,
+               0 0 50px #228DFF,
+               0 0 75px #228DFF;
+  }
+}
+
+@keyframes neon3 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #FFDD1B,
+               0 0 70px  #FFDD1B,
+               0 0 80px  #FFDD1B,
+               0 0 100px #FFDD1B,
+               0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #FFDD1B,
+               0 0 35px #FFDD1B,
+               0 0 40px #FFDD1B,
+               0 0 50px #FFDD1B,
+               0 0 75px #FFDD1B;
+  }
+}
+
+@keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #B6FF00,
+               0 0 70px  #B6FF00,
+               0 0 80px  #B6FF00,
+               0 0 100px #B6FF00,
+               0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #B6FF00,
+               0 0 35px #B6FF00,
+               0 0 40px #B6FF00,
+               0 0 50px #B6FF00,
+               0 0 75px #B6FF00;
+  }
+}
+
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #FF9900,
+               0 0 70px  #FF9900,
+               0 0 80px  #FF9900,
+               0 0 100px #FF9900,
+               0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #FF9900,
+               0 0 35px #FF9900,
+               0 0 40px #FF9900,
+               0 0 50px #FF9900,
+               0 0 75px #FF9900;
+  }
+}
+
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px #fff,
+               0 0 30px #fff,
+               0 0 40px #ff00de,
+               0 0 70px #ff00de,
+               0 0 80px #ff00de,
+               0 0 100px #ff00de,
+               0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #ff00de,
+               0 0 35px #ff00de,
+               0 0 40px #ff00de,
+               0 0 50px #ff00de,
+               0 0 75px #ff00de;
+  }
+}
+
+/* end glow */

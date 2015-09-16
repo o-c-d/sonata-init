@@ -1,0 +1,65 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{#% sonata_template_box 'This is the user authentication edition template. Feel free to override it.' %#}
+
+{% block sonata_page_breadcrumb %}
+    {% if breadcrumb_context is not defined %}
+        {% set breadcrumb_context = 'user_index' %}
+    {% endif %}
+    <div class="row-fluid clearfix">
+        {{ sonata_block_render_event('breadcrumb', { 'context': breadcrumb_context, 'current_uri': app.request.requestUri }) }}
+    </div>
+{% endblock %}
+
+<h2>{% block sonata_profile_title %}{% trans from 'SonataUserBundle' %}sonata_profile_title{% endtrans %}{% endblock %}</h2>
+
+<div class="sonata-user-show row row-fluid">
+
+    <div class="span2 col-lg-2" style="padding: 8px 0;">
+        {% block sonata_profile_menu %}
+            {{ sonata_block_render({'type': 'sonata.user.block.menu'}, {'current_uri': app.request.requestUri}) }}
+        {% endblock %}
+    </div>
+
+    <div class="span10 col-lg-10">
+        {% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}
+
+
+		<div class="row">
+			<div class="span6 col-lg-6">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{ 'title_user_edit_authentication'|trans({}, 'SonataUserBundle') }}</h3>
+					</div>
+					<div class="panel-body">
+						<form action="{{ path('sonata_user_profile_edit_authentication') }}" method="POST" class="form-horizontal">
+							{{ form_widget(form) }}
+
+							<button type="submit" name="submit" class="btn btn-primary pull-right">{{ 'sonata_user_submit'|trans({}, 'SonataUserBundle') }}</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="span6 col-lg-6">
+				<div class="panel panel-danger">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{ 'sonata_change_password_link'|trans({}, 'SonataUserBundle') }}</h3>
+					</div>
+					<div class="panel-body">
+						{% render url("sonata_user_change_password") %}
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+</div>

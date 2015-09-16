@@ -1,0 +1,23 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: db1807.1and1.fr 
+    database_port: null
+    database_name: db277295016
+    database_user: dbo277295016
+    database_password: 5Ql@1&1
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
+    secret: 87c23b6882b6130135a6948400fff9e314a2a1e9
+    locale: fr
+    domain_host: o-c-d.fr
+    google_analytics_ua: UA-116502-9
+    google_client_id: 97250673256-3qa04fp22ahob52ttceoj8q3uahtsasc.apps.googleusercontent.com
+    google_client_secret: 1WWhRc3o_BSuO1Sz4L35rT40
+    facebook_client_id: '1487410514912527'
+    facebook_client_secret: 43a7eb9a5322430600004bab55ee1604
+    github_client_id: '-'
+    github_client_secret: '-'
+    twitter_client_id: P8zsboCggnxPZ6DdWYaSsit5p
+    twitter_client_secret: V9Hk3OGXBFJWjR8aUUFERNnZXy09fX65D665timvZHZA7dfyZB
